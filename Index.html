@@ -73,7 +73,7 @@
         <div class="section">
             <h2>Explore More</h2>
             <hr>
-            <p>Interested in the technical details or want to contribute? Visit our <a href="https://viralbhadeshiya.github.io/eec172_final_project/Index.html" target="_blank">GitHub repository</a> to explore the code, report issues, or suggest improvements. Join us in enhancing the gaming experience!</p>
+            <p>Interested in the technical details or want to contribute? Visit our <a href="https://github.com/viralbhadeshiya/eec172_final_project" target="_blank">GitHub repository</a> to explore the code, report issues, or suggest improvements. Join us in enhancing the gaming experience!</p>
             <img src="first-screen.jpg" alt="First Screen of Brick Breaker Game">
             <p>Take a look at the exciting first screen of our Brick Breaker game, inviting players to start their adventure!</p>
         </div>
@@ -100,33 +100,108 @@
             </div>
         </div>
         
-        
-        
         <div class="section">
-            <h2>Hardware and Software Tools</h2>
+            <h2>System Architecture</h2>
+            <hr>
+            <p>Our Brick Breaker game is built on a robust architecture that integrates various hardware and software components. Below is a block diagram and a detailed explanation of how each component is connected:</p>
+            <p>Here is how each component is interconnected:</p>
             <ul>
-                <li>CC3200 LaunchPad - Microcontroller board for IoT applications.</li>
-                <li>IR Receiver, OLED Display - For remote control and display.</li>
-                <li>Code Composer Studio (CCS) - Integrated Development Environment.</li>
-                <li>AWS IoT Services - For storing and retrieving game scores in real time.</li>
+                <li><strong>CC3200 Microcontroller and OLED:</strong> Connected via SPI (Serial Peripheral Interface), allowing high-speed data transfer for display updates.</li>
+                <li><strong>CC3200 Microcontroller and AWS:</strong> Connected through REST API/WiFi, enabling seamless data transmission to and from the cloud for real-time score tracking.</li>
+                <li><strong>CC3200 Microcontroller and Accelerometer:</strong> Linked via I2C (Inter-Integrated Circuit), facilitating accurate readings of tilt and motion for game control.</li>
+                <li><strong>CC3200 Microcontroller and IR Receiver:</strong> Connected using the NEC protocol, which is widely used for remote control systems, ensuring reliable communication.</li>
+                <li><strong>IR Receiver and IR Remote:</strong> Communicate through IR waves, allowing the user to interact with the game via the remote control.</li>
             </ul>
         </div>
+
         <div class="section">
-            <h2>Gameplay Mechanics</h2>
-            <p>Players control a paddle to break bricks by bouncing a ball without letting it drop. Scores are updated and stored via AWS IoT, enhancing gameplay across multiple devices.</p>
+            <h2>Functional Blocks</h2>
+            <hr>
+            <div>
+                <h3>AWS Integration</h3>
+                <p>The game leverages AWS for robust cloud storage and data handling. We configure AWS to manage player profiles and game scores, ensuring data persistence across sessions. AWS is set up to trigger updates whenever a player achieves a new high score, which is then stored and can be retrieved in real time for leaderboard updates.</p>
+            </div>
+            <div>
+                <h3>OLED Display via SPI</h3>
+                <p>The OLED display is crucial for real-time game feedback. Connected via SPI (Serial Peripheral Interface), it offers high-speed data transmission allowing for quick updates on the screen. This setup displays game scores, player profiles, and other critical game information dynamically as the game progresses.</p>
+            </div>
+            <div>
+                <h3>Accelerometer via I2C</h3>
+                <p>The accelerometer is integral to the game's control mechanism. It captures the tilt and motion of the CC3200 board via I2C protocol, translating physical movements into game actions. This allows players to control the paddle in the game by physically tilting the board, providing an immersive gaming experience.</p>
+            </div>
+            <div>
+                <h3>IR Communication</h3>
+                <p>The IR receiver and remote communicate using IR waves, allowing for remote game controls. This setup enables players to make selections on the game's menu and other interfaces without direct contact with the board, enhancing the usability and accessibility of the game.</p>
+            </div>
         </div>
-        <div class="section">
-            <img src="screenshot.jpg" alt="Gameplay Screenshot">
-            <p>Snapshot of the Brick Breaker game in action on the CC3200 LaunchPad.</p>
-        </div>
+        
         <div class="section">
             <h2>Technical Challenges</h2>
-            <p>Integrating physical hardware with cloud services presented unique challenges, including handling the data transmission and parsing JSON for the game's score logic.</p>
+            <hr>
+            <p>Throughout the development of our Brick Breaker game on the CC3200 microcontroller, we encountered several technical challenges that required innovative solutions. One of the main hurdles was managing the limited memory and processing power of the CC3200 while ensuring smooth gameplay and real-time data processing. Implementing efficient memory management techniques was crucial to avoid performance bottlenecks.</p>
+            <p>Additionally, establishing a stable and secure connection between the microcontroller and AWS posed challenges, particularly in handling the REST API calls over WiFi. Ensuring reliable data transmission without loss or corruption was paramount, especially when updating high scores and player data in real-time. We also faced complexities in calibrating the accelerometer accurately to translate physical tilts into precise in-game movements, which was critical for the intuitive gameplay experience our game offers.</p>
+            <p>Integrating the IR communication system required careful tuning to prevent interference and ensure that signals from the IR remote were decoded accurately by the IR receiver. Each of these challenges was addressed through rigorous testing and iterative development, allowing us to refine our system and deliver a seamless gaming experience.</p>
         </div>
+        
         <div class="section">
             <h2>Future Enhancements</h2>
+            <hr>
             <p>We plan to expand the game's features, including multiplayer capabilities and improved user interface interactions through mobile apps or web services.</p>
         </div>
+
+        <div class="section">
+            <h2>Finalized Bill of Materials (BOM)</h2>
+            <hr>
+            <p>The following table outlines the essential components used in our Brick Breaker game, along with their approximate prices and purposes:</p>
+            <table border="1" cellspacing="0" cellpadding="10">
+                <thead>
+                    <tr>
+                        <th>Component Name</th>
+                        <th>Approx. Price</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>CC3200 Microcontroller</td>
+                        <td>$55</td>
+                        <td>Main controller for processing and IoT communications.</td>
+                    </tr>
+                    <tr>
+                        <td>OLED Display</td>
+                        <td>$29.95</td>
+                        <td>Displays game stats and player feedback in real-time.</td>
+                    </tr>
+                    <tr>
+                        <td>IR Receiver</td>
+                        <td>$1.50</td>
+                        <td>Receives signals from the IR remote for game control.</td>
+                    </tr>
+                    <tr>
+                        <td>IR Remote</td>
+                        <td>$38.49</td>
+                        <td>Allows players to interact with the game wirelessly.</td>
+                    </tr>
+                    <tr>
+                        <td>AWS Cloud Services</td>
+                        <td>Free Tier</td>
+                        <td>Handles storage and processing of game data and scores.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total Components</strong></td>
+                        <td><strong>4</strong></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total Price</strong></td>
+                        <td><strong>$124.94</strong></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        
     </div>
 </body>
 </html>
