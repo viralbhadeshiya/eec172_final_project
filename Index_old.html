@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brick Breaker on CC3200</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            color: #333;
+        }
+        .header {
+            background: #0073e6;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .content {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>CC3200 Brick Breaker Game</h1>
+        <p>A showcase of Internet of Things (IoT) capabilities with AWS integration</p>
+    </div>
+    <div class="content">
+        <div class="section">
+            <h2>Project Introduction</h2>
+            <p>This project implements the classic Brick Breaker game on a CC3200 LaunchPad. The aim was to overcome the microcontroller's memory limitations and enhance user experience by integrating AWS IoT for real-time score tracking and storage.</p>
+        </div>
+        <div class="section">
+            <h2>Hardware and Software Tools</h2>
+            <ul>
+                <li>CC3200 LaunchPad - Microcontroller board for IoT applications.</li>
+                <li>IR Receiver, OLED Display - For remote control and display.</li>
+                <li>Code Composer Studio (CCS) - Integrated Development Environment.</li>
+                <li>AWS IoT Services - For storing and retrieving game scores in real time.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Gameplay Mechanics</h2>
+            <p>Players control a paddle to break bricks by bouncing a ball without letting it drop. Scores are updated and stored via AWS IoT, enhancing gameplay across multiple devices.</p>
+        </div>
+        <div class="section">
+            <img src="screenshot.jpg" alt="Gameplay Screenshot">
+            <p>Snapshot of the Brick Breaker game in action on the CC3200 LaunchPad.</p>
+        </div>
+        <div class="section">
+            <h2>Technical Challenges</h2>
+            <p>Integrating physical hardware with cloud services presented unique challenges, including handling the data transmission and parsing JSON for the game's score logic.</p>
+        </div>
+        <div class="section">
+            <h2>Future Enhancements</h2>
+            <p>We plan to expand the game's features, including multiplayer capabilities and improved user interface interactions through mobile apps or web services.</p>
+        </div>
+    </div>
+</body>
+</html>
