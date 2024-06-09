@@ -13,10 +13,11 @@
             color: #333;
         }
         .header {
-            background: #0073e6;
+            background: linear-gradient(to right, #0073e6, #005db3);
             color: #fff;
-            padding: 10px 20px;
+            padding: 20px 20px;
             text-align: center;
+            border-bottom: 6px solid #004080;
         }
         .content {
             padding: 20px;
@@ -33,11 +34,22 @@
         h1, h2 {
             color: #333;
         }
+        h1 {
+            font-size: 32px;
+            margin-bottom: 5px;
+        }
+        .class-info {
+            font-size: 18px;
+            font-style: italic;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
     <div class="header">
         <h1>CC3200 Brick Breaker Game</h1>
+        <p class="class-info">EEC172 Spring 2024 - Viral Bhadeshiya & Raymond Iacobacci</p>
         <p>A showcase of Internet of Things (IoT) capabilities with AWS integration</p>
     </div>
     <div class="content">
