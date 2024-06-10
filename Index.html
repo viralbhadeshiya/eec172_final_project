@@ -115,6 +115,16 @@
         </div>
 
         <div class="section">
+            <h2>Functional Specification</h2>
+            <hr>
+            <p>Our overarching system structure is based off a state machine, with the playable game itself being one of the controllers taking one state to the next. Each on of the entrance screens represents a state, where the player can either 
+                a: Select a new player (and proceed to IO substates, and then to the game), or
+                b: Select an existing player (and proceed to player selection, and then to the game)
+                In either case, before the end of player configuration the code sends an HTTP GET request to the Shadow to get information on existing scores and players. Once these steps are finished, the game is played through and the accumulated information is <i>then</i> sent to the Shadow to minimize the time-costly step of internet connectivity.
+            </p>
+        </div>
+
+        <div class="section">
             <h2>Functional Blocks</h2>
             <hr>
             <div>
